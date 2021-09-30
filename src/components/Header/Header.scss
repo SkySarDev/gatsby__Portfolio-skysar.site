@@ -1,0 +1,220 @@
+@import "components/UI/styles/main";
+
+.menu {
+  background-color: $color-bg-nav;
+  font-size: 1rem;
+
+  &-mobile {
+    @include font-second;
+    z-index: 1;
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    top: 0;
+    background-color: $color-bg-nav;
+    text-align: center;
+    font-size: rem(22);
+    padding-top: em(40);
+    transform: translateY(-100%);
+    transition: all 0.3s;
+
+    .active & {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    &__nav-list {
+      border-top: 1px dashed $color-nav;
+      padding: rem(20) 0;
+    }
+
+    &__nav-link {
+      margin-bottom: rem(25);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    @include media-breakpoint-up($sm) {
+      &__nav-list {
+        display: flex;
+        justify-content: center;
+      }
+
+      &__nav-link {
+        margin-bottom: 0;
+        margin-right: em(20);
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    @include media-breakpoint-up($lg) {
+      display: none;
+    }
+  }
+
+  &__container {
+    position: relative;
+    background-color: $color-bg-nav;
+    z-index: 10;
+  }
+
+  &__row {
+    height: em(45);
+    align-items: center;
+  }
+
+  &__socials-list {
+    display: flex;
+    height: em(25);
+  }
+
+  &__socials-item {
+    &:not(:last-child) {
+      margin-right: 1em;
+    }
+  }
+
+  &__icons {
+    width: em(25);
+    height: em(25);
+    fill: $color-nav;
+    transition: fill 0.3s;
+
+    @media (hover: hover) {
+      &:hover {
+        fill: $color-hover;
+      }
+    }
+  }
+
+  &__nav {
+    display: none;
+    @include font-second;
+
+    @include media-breakpoint-up($lg) {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    &-list {
+      display: flex;
+    }
+
+    &-link {
+      a {
+        color: $color-nav;
+
+        @media (hover: hover) {
+          transition: color 0.3s;
+
+          &:hover {
+            color: $color-hover;
+          }
+        }
+      }
+    }
+
+    &-dots {
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: 3px;
+      height: 100%;
+      margin: 0 20px;
+
+      &:before,
+      &:after,
+      span {
+        position: absolute;
+        width: 3px;
+        height: 3px;
+        left: 0;
+        background: $color-nav;
+        border-radius: 50%;
+      }
+
+      &:before,
+      &:after {
+        content: "";
+      }
+
+      &:before {
+        top: 2px;
+      }
+
+      &:after {
+        bottom: 1px;
+      }
+    }
+  }
+
+  &__lang-burger {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__lang {
+    height: em(25);
+  }
+
+  &__burger {
+    margin-left: 1em;
+    z-index: 10;
+
+    &-btn {
+      position: relative;
+      display: block;
+      width: rem(30);
+      height: rem(20);
+      background: transparent;
+      border-top: 4px solid;
+      border-bottom: 4px solid;
+      color: $color-nav;
+      transition: all 0.25s ease-in-out;
+
+      &:before,
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        top: 50%;
+        left: 50%;
+        background: $color-nav;
+        transform: translate(-50%, -50%);
+        transition: transform 0.25s ease-in-out;
+      }
+
+      .active & {
+        border-color: transparent;
+
+        &:before {
+          transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        &:after {
+          transform: translate(-50%, -50%) rotate(-45deg);
+        }
+      }
+    }
+
+    @include media-breakpoint-up($lg) {
+      display: none;
+    }
+  }
+
+  @include media-breakpoint-up($sm) {
+    font-size: rem(17);
+  }
+
+  @include media-breakpoint-up($md) {
+    font-size: rem(18);
+  }
+}

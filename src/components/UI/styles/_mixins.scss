@@ -1,11 +1,13 @@
+@use "sass:math";
+
 $browser-context: 16;
 
 @function em($pixels, $context: $browser-context) {
-  @return ($pixels / $context) * 1em;
+  @return math.div($pixels, $context) * 1em;
 }
 
 @function rem($pixels, $context: $browser-context) {
-  @return ($pixels / $context) * 1rem;
+  @return math.div($pixels, $context) * 1rem;
 }
 
 @mixin font-main() {
@@ -23,4 +25,10 @@ $browser-context: 16;
   border-radius: 3px;
   background-color: $color-bg-dark;
   box-shadow: 0 6px 6px rgba(169, 140, 106, 0.2);
+}
+
+@mixin media-breakpoint-up($width) {
+  @media (min-width: $width) {
+    @content;
+  }
 }
