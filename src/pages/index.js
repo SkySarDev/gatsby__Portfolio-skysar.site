@@ -3,8 +3,8 @@ import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import { useIntl, changeLocale } from "gatsby-plugin-intl";
 
-import Layout from "../components/layout";
-import Seo from "../components/seo";
+import Layout from "components/Layout";
+import Seo from "components/seo";
 
 const IndexPage = () => {
   const { locale } = useIntl();

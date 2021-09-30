@@ -1,0 +1,16 @@
+@import "components/UI/styles/main";
+
+html {
+  height: 100%;
+}
+
+body {
+  @include font-main;
+  color: $font-color-dark;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
