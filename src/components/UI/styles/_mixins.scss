@@ -26,9 +26,3 @@ $browser-context: 16;
   background-color: $color-bg-dark;
   box-shadow: 0 6px 6px rgba(169, 140, 106, 0.2);
 }
-
-@mixin media-breakpoint-up($width) {
-  @media (min-width: $width) {
-    @content;
-  }
-}

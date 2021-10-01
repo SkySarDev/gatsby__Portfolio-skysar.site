@@ -1,0 +1,14 @@
+@import "components/UI/styles/main";
+
+.menu {
+  &__socials-list {
+    display: flex;
+    height: em(25);
+  }
+
+  &__socials-item {
+    &:not(:last-child) {
+      margin-right: 1em;
+    }
+  }
+}
