@@ -15,6 +15,10 @@ const getStrapiCategories = namesArr =>
     })
     .flat();
 
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
     title: `Maxim Biryukov - Frontend Developer`,
@@ -30,6 +34,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-resolve-src`,
     `gatsby-plugin-sass`,
+    `gatsby-plugin-purgecss`,
     {
       resolve: "gatsby-plugin-asset-path",
       options: {
@@ -57,12 +62,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Maxim Biryukov - Frontend Developer`,
+        short_name: `Maxim Biryukov - Frontend Developer`,
         start_url: `/`,
-        background_color: `#663399`,
+        background_color: `#efe6d6`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`,
+        icon: `src/images/favicon.png`,
       },
     },
     {
@@ -77,10 +82,14 @@ module.exports = {
     {
       resolve: "gatsby-source-strapi",
       options: {
-        apiURL: process.env.API_URL || "http://localhost:1337",
+        apiURL: process.env.GATSBY_API_URL || "http://localhost:1337",
         queryLimit: 1000,
         collectionTypes: getStrapiCategories(["projects"]),
-        singleTypes: getStrapiCategories(["about-me"]),
+        singleTypes: getStrapiCategories([
+          "about-me",
+          "skills",
+          "projects-page",
+        ]),
         loginData: {
           identifier: "",
           password: "",

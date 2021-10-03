@@ -16,13 +16,17 @@ const MenuLang = () => {
   };
 
   return (
-    <div className="menu__lang" onClick={changeLangHandler}>
+    <button
+      className="menu__lang"
+      aria-label={"Switch language"}
+      onClick={changeLangHandler}
+    >
       {locale === "ru" ? (
         <IconEn className="menu__icons" />
       ) : (
         <IconRu className="menu__icons" />
       )}
-    </div>
+    </button>
   );
 };
 
