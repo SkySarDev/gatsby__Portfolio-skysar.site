@@ -1,0 +1,126 @@
+@import "components/UI/styles/main";
+
+.main {
+  flex: 1 1 auto;
+  border-bottom: 1px solid $color-line-dark;
+  background-color: $color-bg-light;
+  overflow-y: auto;
+
+  @include media-breakpoint-up(sm) {
+    font-size: rem(17);
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: rem(18);
+  }
+
+  &__container {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  &__slider {
+    display: flex;
+    transition: transform 0.5s;
+    height: 100%;
+  }
+
+  &__block {
+    flex: 1 0 100%;
+    max-height: 100%;
+    height: 100%;
+
+    &-container {
+      padding: em(25) 0;
+      height: 100%;
+
+      @include media-breakpoint-up(md) {
+        padding: em(30) 0;
+      }
+    }
+  }
+
+  &__title {
+    text-align: center;
+    font-size: rem(22);
+    margin-bottom: em(25, 22);
+    letter-spacing: 1px;
+
+    @include media-breakpoint-up(sm) {
+      font-size: rem(24);
+    }
+
+    @include media-breakpoint-up(md) {
+      font-size: rem(26);
+    }
+
+    @include media-breakpoint-up(lg) {
+      font-size: rem(30);
+    }
+
+    &:before,
+    &:after {
+      font-size: 0.7em;
+      position: relative;
+      bottom: 2px;
+    }
+
+    &:before {
+      content: "<";
+      right: 5px;
+    }
+
+    &:after {
+      content: " />";
+      left: 0;
+    }
+  }
+
+  &__content {
+    justify-content: center;
+    margin-bottom: em(25);
+
+    @include media-breakpoint-up(md) {
+      margin-bottom: em(30);
+    }
+  }
+
+  &-nav {
+    justify-content: center;
+
+    &__link {
+      max-width: 130px;
+
+      @include media-breakpoint-up(sm) {
+        max-width: 100%;
+      }
+
+      &--first {
+        margin-left: auto;
+      }
+    }
+  }
+}
+
+.button {
+  @include font-second;
+  @include content-wrapper;
+  display: block;
+  padding: em(10);
+  color: $color-line-dark;
+  text-align: center;
+
+  &--light {
+    display: inline-block;
+    background-color: $color-bg-light;
+    box-shadow: none;
+  }
+
+  @media (hover: hover) {
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: $color-hover;
+    }
+  }
+}

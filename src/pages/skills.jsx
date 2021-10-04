@@ -3,7 +3,6 @@ import { graphql } from "gatsby";
 import { useIntl } from "gatsby-plugin-intl";
 
 import Layout from "components/Layout";
-import Seo from "components/seo";
 
 const IndexPage = ({ data }) => {
   const { locale } = useIntl();
@@ -12,8 +11,7 @@ const IndexPage = ({ data }) => {
   );
 
   return (
-    <Layout>
-      <Seo title={title} />
+    <Layout title={title}>
       <h1>{title}</h1>
 
       {skillsList.map(({ title, icon, list }) => {

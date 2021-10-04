@@ -7,7 +7,7 @@ import MenuNavLinks from "components/Menu/MenuNavLinks";
 
 import "components/Menu/Menu.scss";
 
-const Header = ({ siteTitle }) => {
+const Header = () => {
   const [menuActive, setMenuActive] = useState(false);
 
   const changeMenuActive = value => setMenuActive(value);

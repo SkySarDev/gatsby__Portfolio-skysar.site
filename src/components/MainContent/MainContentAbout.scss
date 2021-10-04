@@ -1,0 +1,111 @@
+@import "components/UI/styles/main";
+
+.about {
+  &__content {
+    align-items: center;
+  }
+
+  &__img {
+    display: flex;
+    justify-content: center;
+    opacity: 0.7;
+
+    img {
+      width: 100%;
+      max-height: 185px;
+
+      @include media-breakpoint-up(sm) {
+        min-height: 230px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        min-height: 290px;
+      }
+    }
+
+    &-wrapper {
+      margin-bottom: em(20);
+
+      @include media-breakpoint-up(md) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__description {
+    &-wrapper {
+      display: flex;
+      justify-content: center;
+    }
+    &-content {
+      width: 300px;
+
+      @include media-breakpoint-up(lg) {
+        width: 320px;
+      }
+    }
+
+    &-title {
+      @include font-second;
+      font-size: rem(20);
+      text-align: center;
+      font-weight: 700;
+      margin: 0 0 0.3em;
+
+      @include media-breakpoint-up(sm) {
+        font-size: rem(22);
+      }
+
+      @include media-breakpoint-up(md) {
+        font-size: rem(24);
+      }
+
+      @include media-breakpoint-up(lg) {
+        font-size: rem(26);
+      }
+    }
+
+    &-subtitle {
+      text-align: center;
+      position: relative;
+      margin-bottom: em(25);
+
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -5px;
+        width: 50%;
+        height: 1px;
+        background-color: $color-line-dark;
+        margin: auto;
+      }
+    }
+
+    &-text {
+      line-height: 125%;
+      padding: 0 rem(10);
+      text-align: center;
+
+      &:not(:last-child) {
+        margin-bottom: em(25);
+      }
+    }
+
+    &-button {
+      text-align: center;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    &__description {
+      order: 1;
+    }
+
+    &__img-wrapper {
+      order: 2;
+    }
+  }
+}

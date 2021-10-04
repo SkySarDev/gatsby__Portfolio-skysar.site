@@ -3,7 +3,8 @@ import { graphql } from "gatsby";
 import { useIntl } from "gatsby-plugin-intl";
 
 import Layout from "components/Layout";
-import Seo from "components/seo";
+import { GatsbyImage } from "gatsby-plugin-image";
+import MainSection from "components/MainContent/MainSection";
 
 const Projects = ({ data }) => {
   const { locale } = useIntl();
@@ -14,20 +15,23 @@ const Projects = ({ data }) => {
   const projectsList = nodes.filter(item => item.locale === locale);
 
   return (
-    <Layout>
-      <Seo title={pageTitle} />
-      <h1>{pageTitle}</h1>
+    <Layout title={pageTitle}>
+      <MainSection title={pageTitle} sectionClass={"projects"}>
+        <div className="main__content row">
+          <div className="projects__wrapper">
+            {projectsList.map(projectItem => {
+              const { id, title, description } = projectItem;
 
-      {projectsList.map(projectItem => {
-        const { id, title, description } = projectItem;
-
-        return (
-          <div key={id}>
-            <h3>{title}</h3>
-            <p>{description}</p>
+              return (
+                <div key={id}>
+                  <h3>{title}</h3>
+                  <p>{description}</p>
+                </div>
+              );
+            })}
           </div>
-        );
-      })}
+        </div>
+      </MainSection>
     </Layout>
   );
 };
