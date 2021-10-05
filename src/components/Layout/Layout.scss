@@ -1,6 +1,9 @@
 @import "components/UI/styles/main";
 
-html {
+html,
+body,
+#___gatsby,
+#gatsby-focus-wrapper {
   height: 100%;
 }
 
@@ -19,4 +22,8 @@ body {
   background-color: $color-bg-dark;
   text-align: center;
   padding: em(20) 0;
+
+  @media (max-height: 350px) {
+    display: none;
+  }
 }

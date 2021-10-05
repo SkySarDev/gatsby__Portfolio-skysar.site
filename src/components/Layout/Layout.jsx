@@ -4,11 +4,12 @@ import { useStaticQuery, graphql } from "gatsby";
 
 import Header from "components/Header";
 import Seo from "components/Seo";
-
-import "./Layout.scss";
 import MainContent from "components/MainContent";
 
+import "./Layout.scss";
+
 const Layout = ({ title, children }) => {
+  const currentYear = new Date().getFullYear();
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -22,9 +23,11 @@ const Layout = ({ title, children }) => {
   return (
     <>
       <Seo title={title} />
-      <Header />
-      <MainContent>{children}</MainContent>
-      <footer className="footer">© 2021, skysar.site</footer>
+      <div className="wrapper">
+        <Header />
+        <MainContent>{children}</MainContent>
+        <footer className="footer">© 2020-{currentYear}, skysar.site</footer>
+      </div>
     </>
   );
 };

@@ -1,0 +1,109 @@
+@import "components/UI/styles/main";
+
+.projects {
+  &__wrapper {
+    width: 320px;
+    overflow: hidden;
+    padding: 0;
+
+    @include media-breakpoint-up(md) {
+      width: 640px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: 960px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.project-card {
+  padding: 0 rem(12);
+  margin-bottom: rem(12);
+  cursor: pointer;
+
+  &:last-child {
+    margin-bottom: rem(10);
+  }
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: rem(24);
+
+    &:nth-last-child(-n + 2) {
+      margin-bottom: rem(10);
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    &:nth-last-child(-n + 3) {
+      margin-bottom: rem(10);
+    }
+  }
+
+  &__inner {
+    @include content-wrapper;
+    padding: 5px;
+    width: 296px;
+  }
+
+  &__content {
+    position: relative;
+    border: 1px solid $color-line-dark;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  &__title,
+  &__more-info {
+    display: none;
+    position: absolute;
+    background-color: $color-bg-light;
+    width: 100%;
+    padding: rem(10);
+    text-align: center;
+    transition: transform 0.35s;
+    z-index: 10;
+  }
+
+  &__title {
+    top: 0;
+    line-height: 130%;
+    border-bottom: 1px solid $color-line-dark;
+    transform: translateY(-100%);
+  }
+
+  &__more-info {
+    bottom: 0;
+    border-top: 1px solid $color-line-dark;
+    transform: translateY(100%);
+  }
+
+  &__img {
+    width: 284px;
+    transition: all 0.35s;
+  }
+
+  @media (hover: hover) {
+    cursor: pointer;
+
+    &__title,
+    &__more-info {
+      display: block;
+    }
+
+    &:hover &__title,
+    &:hover &__more-info {
+      transform: translateY(0);
+    }
+
+    &:hover &__img {
+      background-color: $color-bg-light;
+      opacity: 0.5;
+      transition: all 0.5s;
+    }
+  }
+}
