@@ -89,6 +89,7 @@ module.exports = {
           "about-me",
           "skills",
           "projects-page",
+          "contact",
         ]),
         loginData: {
           identifier: "",

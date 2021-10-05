@@ -1,0 +1,45 @@
+@import "components/UI/styles/main";
+
+.contact {
+  &__form {
+    @include content-wrapper;
+    position: relative;
+    width: 300px;
+    text-align: center;
+    padding: 12px;
+    margin-bottom: em(25);
+
+    @include media-breakpoint-up(sm) {
+      width: 510px;
+    }
+
+    @include media-breakpoint-up(md) {
+      width: 550px;
+      margin-bottom: em(30);
+    }
+
+    input,
+    textarea {
+      padding: em(10);
+      margin-bottom: em(15);
+      display: block;
+      width: 100%;
+      border: 1px solid $color-line-dark;
+      border-radius: 3px;
+      background-color: $color-bg-light;
+
+      &::placeholder {
+        letter-spacing: 2px;
+        color: $font-color-dark;
+      }
+    }
+
+    textarea {
+      resize: none;
+    }
+
+    #honeypot {
+      display: none;
+    }
+  }
+}

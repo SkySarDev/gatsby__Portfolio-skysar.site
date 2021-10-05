@@ -68,17 +68,6 @@
     align-items: center;
   }
 
-  &__socials-list {
-    display: flex;
-    height: em(25);
-  }
-
-  &__socials-item {
-    &:not(:last-child) {
-      margin-right: 1em;
-    }
-  }
-
   &__icons {
     width: em(25);
     height: em(25);

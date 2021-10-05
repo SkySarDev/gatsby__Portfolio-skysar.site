@@ -1,0 +1,45 @@
+@import "components/UI/styles/main";
+
+.menu {
+  &__socials-list {
+    display: flex;
+    height: em(25);
+  }
+
+  &__socials-item {
+    &:not(:last-child) {
+      margin-right: 1em;
+    }
+  }
+}
+
+.contact {
+  &__socials {
+    &-list {
+      display: flex;
+      justify-content: center;
+    }
+
+    &-item {
+      margin-right: em(25);
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &-icon {
+      width: em(30);
+      height: em(30);
+      fill: $color-icons;
+
+      @media (hover: hover) {
+        transition: fill 0.3s;
+
+        &:hover {
+          fill: $color-hover;
+        }
+      }
+    }
+  }
+}

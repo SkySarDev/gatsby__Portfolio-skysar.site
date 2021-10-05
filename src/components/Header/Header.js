@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 import MenuLang from "components/Menu/MenuLang";
-import MenuSocials from "components/Menu/MenuSocials";
 import MenuNavLinks from "components/Menu/MenuNavLinks";
+import SocialsIcons from "components/UI/SocialsIcons";
 
 import "components/Menu/Menu.scss";
 
@@ -24,7 +24,13 @@ const Header = () => {
         </div>
         <div className="menu__container container">
           <div className="menu__row row">
-            <MenuSocials />
+            <div className="menu__socials col col-lg-3">
+              <SocialsIcons
+                listClass="menu__socials-list"
+                itemsClass="menu__socials-item"
+                iconsClass="menu__icons"
+              />
+            </div>
             <nav className="menu__nav col-lg">
               <ul className="menu__nav-list">
                 <MenuNavLinks />
