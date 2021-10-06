@@ -13,12 +13,19 @@ const Contact = ({ data }) => {
   const { title, field_name, field_email, field_message, button_name } =
     data.allStrapiContact.nodes.find(item => item.locale === locale);
 
+  const onSubmitHandler = e => {
+    e.preventDefault();
+
+    console.log(e.target);
+    e.target.reset();
+  };
+
   return (
     <Layout title={title}>
       <MainSection title={title} sectionClass="contact">
         <div className="main__content row">
           <div className="contact__form">
-            <form id="contact-form">
+            <form id="contact-form" onSubmit={onSubmitHandler}>
               <div className="row">
                 <div className="contact__form-name col-sm">
                   <input

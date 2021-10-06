@@ -4,17 +4,17 @@
   &__form {
     @include content-wrapper;
     position: relative;
-    width: 300px;
+    width: 300px !important;
     text-align: center;
     padding: 12px;
     margin-bottom: em(25);
 
     @include media-breakpoint-up(sm) {
-      width: 510px;
+      width: 510px !important;
     }
 
     @include media-breakpoint-up(md) {
-      width: 550px;
+      width: 550px !important;
       margin-bottom: em(30);
     }
 
