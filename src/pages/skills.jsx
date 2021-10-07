@@ -20,13 +20,7 @@ const IndexPage = ({ data }) => {
       <div className="skills-card">
         <div className="skills-card__content">
           <div className="skills-card__header">
-            <img
-              className="skills-card__icon"
-              src={skillImg}
-              alt={title}
-              width={40}
-              height={40}
-            />
+            <img className="skills-card__icon" src={skillImg} alt={title} />
             <h3 className="skills-card__title">{title}</h3>
           </div>
           <div className="skills-card__body">
