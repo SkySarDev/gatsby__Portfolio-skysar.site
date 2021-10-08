@@ -3,5 +3,9 @@
   "navLink.aboutMe": "About me",
   "navLink.projects": "Projects",
   "navLink.skills": "Skills",
-  "navLink.contact": "Contact"
+  "navLink.contact": "Contact",
+  "sendMessage.sending": "Message sending...",
+  "sendMessage.success": "Message has been sent!",
+  "sendMessage.error": "Error! Message was not sent!",
+  "popup.title": "Notification"
 }

@@ -1,0 +1,90 @@
+@import "components/UI/styles/main";
+
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+
+  @include media-breakpoint-up(sm) {
+    font-size: rem(17);
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: rem(18);
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: rem(20);
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__wrapper {
+    @include content-wrapper;
+    position: relative;
+    padding: rem(5);
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  &__inner {
+    background-color: $color-bg-light;
+    border: 1px solid $color-line-dark;
+    border-radius: 3px;
+    padding: em(15) em(10);
+  }
+
+  &__title {
+    font-weight: bold;
+    margin-bottom: em(25);
+    font-size: rem(18);
+
+    @include media-breakpoint-up(sm) {
+      font-size: rem(19);
+    }
+
+    @include media-breakpoint-up(md) {
+      font-size: rem(20);
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: em(10);
+    right: em(10);
+    width: em(30);
+    height: em(30);
+    fill: $font-color-dark;
+    cursor: pointer;
+  }
+
+  &-notification {
+    &__content {
+      height: 100%;
+    }
+
+    &__wrapper {
+      width: 300px;
+    }
+
+    &__body {
+      text-align: center;
+    }
+
+    &__message {
+      margin-bottom: em(15);
+    }
+
+    &__img img {
+      width: em(30);
+      height: em(30);
+    }
+  }
+}

@@ -3,5 +3,9 @@
   "navLink.aboutMe": "Обо мне",
   "navLink.projects": "Проекты",
   "navLink.skills": "Навыки",
-  "navLink.contact": "Контакты"
+  "navLink.contact": "Контакты",
+  "sendMessage.sending": "Отправка сообщения...",
+  "sendMessage.success": "Сообщение отправлено!",
+  "sendMessage.error": "Ошибка! Сообщение не отправлено!",
+  "popup.title": "Уведомление"
 }
