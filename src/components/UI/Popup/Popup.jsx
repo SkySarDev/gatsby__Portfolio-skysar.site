@@ -9,7 +9,11 @@ const Popup = ({ closePopup, message, image }) => {
   const { messages } = useIntl();
 
   return (
-    <div className="popup popup-notification" onClick={closePopup}>
+    <div
+      className="popup popup-notification"
+      aria-label={"Popup"}
+      onClick={closePopup}
+    >
       <div className="popup__content popup-notification__content">
         <div className="popup__container container">
           <div
@@ -17,7 +21,11 @@ const Popup = ({ closePopup, message, image }) => {
             onClick={e => e.stopPropagation()}
           >
             <div className="popup__inner">
-              <IconCloseBtn className="popup__close" onClick={closePopup} />
+              <IconCloseBtn
+                className="popup__close"
+                aria-label={"Close Popup"}
+                onClick={closePopup}
+              />
               <h3 className="popup__title">{messages["popup.title"]}</h3>
               <div className="popup-notification__body">
                 <p className="popup-notification__message">{message}</p>

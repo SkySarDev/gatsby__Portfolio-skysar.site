@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { useIntl } from "gatsby-plugin-intl";
+import { useIntl, Link } from "gatsby-plugin-intl";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 import Layout from "components/Layout";
@@ -46,9 +46,15 @@ const Projects = ({ data }) => {
         <div className="main__content row">
           <div className="projects__wrapper">
             <div className="projects__list">
-              {projectsList.map(projectItem => (
-                <ProjectCardRender key={projectItem.id} {...projectItem} />
-              ))}
+              {projectsList.map(projectItem => {
+                const { id, slug } = projectItem;
+
+                return (
+                  <Link to={`/project/${slug}`} key={id}>
+                    <ProjectCardRender {...projectItem} />
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </div>
