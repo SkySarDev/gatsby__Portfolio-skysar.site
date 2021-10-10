@@ -64,7 +64,10 @@ export const query = graphql`
         image {
           localFile {
             childImageSharp {
-              gatsbyImageData(formats: [AUTO, WEBP, AVIF], placeholder: BLURRED)
+              gatsbyImageData(
+                formats: [AUTO, WEBP, AVIF]
+                placeholder: TRACED_SVG
+              )
             }
           }
         }
