@@ -40,7 +40,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout title={title}>
       <MainSection title={title} sectionClass="skills">
-        <div className="main__content row row-cols-sm-2 row-cols-xl-4">
+        <div className="main__content skills__wrapper row row-cols-sm-2 row-cols-xl-3">
           {skillsList.map(skillBlock => (
             <SkillCardRender key={skillBlock.title} {...skillBlock} />
           ))}

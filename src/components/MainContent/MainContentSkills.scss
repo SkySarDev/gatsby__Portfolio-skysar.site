@@ -1,6 +1,13 @@
 @import "components/UI/styles/main";
 
 .skills {
+  @include media-breakpoint-up(xl) {
+    &__wrapper {
+      margin: 0 auto;
+      width: 825px;
+    }
+  }
+
   &-card {
     display: flex;
     justify-content: center;
@@ -24,10 +31,8 @@
     }
 
     @include media-breakpoint-up(xl) {
-      justify-content: center;
-
-      &:nth-child(even) {
-        justify-content: center;
+      &:nth-last-child(-n + 2) {
+        margin-bottom: 0;
       }
     }
 
