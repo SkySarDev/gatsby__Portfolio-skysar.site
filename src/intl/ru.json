@@ -1,9 +1,10 @@
 {
-  "title": "Привет, мир!",
   "navLink.aboutMe": "Обо мне",
   "navLink.projects": "Проекты",
   "navLink.skills": "Навыки",
   "navLink.contact": "Контакты",
+  "projectPage.demo": "Демо",
+  "projectPage.backButton": "Назад к проектам",
   "sendMessage.sending": "Отправка сообщения...",
   "sendMessage.success": "Сообщение отправлено!",
   "sendMessage.error": "Ошибка! Сообщение не отправлено!",
