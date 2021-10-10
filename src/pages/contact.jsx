@@ -12,7 +12,7 @@ import Popup from "components/UI/Popup";
 import "components/MainContent/MainContentContact.scss";
 
 const Contact = ({ data }) => {
-  const { sendData, popupHide, popupMessage, popupImage } = useSendMessage();
+  const { sendData, popupClose, popupMessage, popupImage } = useSendMessage();
   const [popupShow, setPopupShow] = useState(false);
 
   const { locale } = useIntl();
@@ -22,8 +22,13 @@ const Contact = ({ data }) => {
   const closePopup = () => setPopupShow(false);
 
   useEffect(() => {
-    if (popupHide) setTimeout(closePopup, 5000);
-  }, [popupHide]);
+    if (popupClose) {
+      setPopupShow(true);
+      setTimeout(closePopup, 5000);
+    }
+
+    return () => closePopup();
+  }, [popupClose]);
 
   const onSubmitHandler = e => {
     e.preventDefault();

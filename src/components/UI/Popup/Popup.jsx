@@ -11,13 +11,14 @@ const Popup = ({ closePopup, message, image }) => {
   return (
     <div
       className="popup popup-notification"
-      aria-label={"Popup"}
+      aria-hidden={true}
       onClick={closePopup}
     >
       <div className="popup__content popup-notification__content">
         <div className="popup__container container">
           <div
             className="popup__wrapper popup-notification__wrapper"
+            aria-hidden={true}
             onClick={e => e.stopPropagation()}
           >
             <div className="popup__inner">

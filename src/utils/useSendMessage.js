@@ -4,7 +4,7 @@ import { SEND_DATA_URL } from "utils/constants";
 
 export default function useSendMessage() {
   const { messages } = useIntl();
-  const [popupHide, setPopupHide] = useState(false);
+  const [popupClose, setPopupClose] = useState(false);
   const [popupMessage, setPopupMessage] = useState("");
   const [popupImage, setPopupImage] = useState("");
 
@@ -20,7 +20,6 @@ export default function useSendMessage() {
         if (res.status === 200) {
           setPopupMessage(messages["sendMessage.success"]);
           setPopupImage("check-yes");
-          setPopupHide(true);
         } else {
           throw Error;
         }
@@ -28,9 +27,9 @@ export default function useSendMessage() {
       .catch(error => {
         setPopupMessage(messages["sendMessage.error"]);
         setPopupImage("check-no");
-        setPopupHide(true);
-      });
+      })
+      .finally(() => setPopupClose(true));
   };
 
-  return { sendData, popupHide, popupMessage, popupImage };
+  return { sendData, popupClose, popupMessage, popupImage };
 }
