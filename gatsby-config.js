@@ -34,14 +34,20 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-resolve-src`,
     `gatsby-plugin-sass`,
-    `gatsby-plugin-purgecss`,
     {
       resolve: "gatsby-plugin-asset-path",
       options: {
         removeMapFiles: true,
-        // paths: ["static"],
         fileTypes: ["js", "map", "css", "json", "txt", "png"],
         copyAssets: false,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-purgecss",
+      options: {
+        purgeCSSOptions: {
+          safelist: [/gatsby/],
+        },
       },
     },
     {
