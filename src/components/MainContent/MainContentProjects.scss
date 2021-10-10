@@ -25,7 +25,6 @@
 .project-card {
   padding: 0 rem(12);
   margin-bottom: rem(12);
-  cursor: pointer;
 
   &:last-child {
     margin-bottom: rem(10);
@@ -90,7 +89,9 @@
   }
 
   @media (hover: hover) {
-    cursor: pointer;
+    &__inner {
+      cursor: pointer;
+    }
 
     &__title,
     &__more-info {

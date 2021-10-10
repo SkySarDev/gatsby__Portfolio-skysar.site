@@ -16,25 +16,27 @@ const Projects = ({ data }) => {
   );
   const projectsList = nodes.filter(item => item.locale === locale);
 
-  const ProjectCardRender = ({ title, description, preview_img }) => {
+  const ProjectCardRender = ({ title, description, preview_img, slug }) => {
     const imageData = getImage(preview_img.localFile);
 
     return (
       <div className="projects__item project-card">
         <div className="project-card__inner">
-          <div className="project-card__content">
-            <h3 className="project-card__title">
-              <b>{title}</b>
-              <br />
-              {description}
-            </h3>
-            <div className="project-card__more-info">{more}</div>
-            <GatsbyImage
-              className="project-card__img"
-              alt={title}
-              image={imageData}
-            />
-          </div>
+          <Link to={`/project/${slug}`}>
+            <div className="project-card__content">
+              <h3 className="project-card__title">
+                <b>{title}</b>
+                <br />
+                {description}
+              </h3>
+              <div className="project-card__more-info">{more}</div>
+              <GatsbyImage
+                className="project-card__img"
+                alt={title}
+                image={imageData}
+              />
+            </div>
+          </Link>
         </div>
       </div>
     );
@@ -46,15 +48,9 @@ const Projects = ({ data }) => {
         <div className="main__content row">
           <div className="projects__wrapper">
             <div className="projects__list">
-              {projectsList.map(projectItem => {
-                const { id, slug } = projectItem;
-
-                return (
-                  <Link to={`/project/${slug}`} key={id}>
-                    <ProjectCardRender {...projectItem} />
-                  </Link>
-                );
-              })}
+              {projectsList.map(projectItem => (
+                <ProjectCardRender key={projectItem.id} {...projectItem} />
+              ))}
             </div>
           </div>
         </div>
