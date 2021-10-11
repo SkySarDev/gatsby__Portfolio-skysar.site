@@ -20,12 +20,6 @@ require("dotenv").config({
 });
 
 module.exports = {
-  siteMetadata: {
-    title: `Maxim Biryukov - Frontend Developer`,
-    description: `Welcome to my site-portfolio! Here you can find my works, skills that I have and my contacts.`,
-    author: `Maxim Biryukov`,
-    siteUrl: `https://skysar.site/`,
-  },
   assetPrefix: "assets",
   plugins: [
     `gatsby-plugin-react-helmet`,

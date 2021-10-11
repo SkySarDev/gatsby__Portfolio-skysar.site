@@ -1,4 +1,7 @@
 {
+  "siteMetadata.title": "Максим Бирюков - Frontend разработчик",
+  "siteMetadata.description": "Добро пожаловать на мой сайт-портфолио! Здесь вы можете посмотреть мои работы, навыки, которыми я владею и найти мои контакты.",
+  "siteMetadata.author": "Максим Бирюков",
   "navLink.aboutMe": "Обо мне",
   "navLink.projects": "Проекты",
   "navLink.skills": "Навыки",
