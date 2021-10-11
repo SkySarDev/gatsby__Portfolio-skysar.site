@@ -1,5 +1,7 @@
 import React from "react";
 
+import { SOCIALS_LINKS } from "utils/constants";
+
 import IconGithub from "components/assets/github.svg";
 import IconInstagram from "components/assets/instagram.svg";
 import IconTelegram from "components/assets/telegram.svg";
@@ -8,6 +10,8 @@ import IconVk from "components/assets/vk.svg";
 import "./SocialsIcons.scss";
 
 const SocialsIcons = ({ listClass, itemsClass, iconsClass }) => {
+  const { github, instagram, telegram, vk } = SOCIALS_LINKS;
+
   const SocialsItemRender = ({ link, children }) => {
     return (
       <li className={itemsClass}>
@@ -20,16 +24,16 @@ const SocialsIcons = ({ listClass, itemsClass, iconsClass }) => {
 
   return (
     <ul className={listClass}>
-      <SocialsItemRender link={"https://github.com/SkySarDev"}>
+      <SocialsItemRender link={github}>
         <IconGithub className={iconsClass} />
       </SocialsItemRender>
-      <SocialsItemRender link={"https://www.instagram.com/webdev_ru"}>
+      <SocialsItemRender link={instagram}>
         <IconInstagram className={iconsClass} />
       </SocialsItemRender>
-      <SocialsItemRender link={"https://t.me/skysar_dev"}>
+      <SocialsItemRender link={telegram}>
         <IconTelegram className={iconsClass} />
       </SocialsItemRender>
-      <SocialsItemRender link={"https://vk.com/webdev_ru"}>
+      <SocialsItemRender link={vk}>
         <IconVk className={iconsClass} />
       </SocialsItemRender>
     </ul>
