@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { graphql } from "gatsby";
 import { useIntl } from "gatsby-plugin-intl";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 import useSendMessage from "utils/useSendMessage";
 import { animations } from "utils/animations";
@@ -43,13 +43,15 @@ const Contact = ({ data }) => {
 
   return (
     <>
-      {popupShow && (
-        <Popup
-          message={popupMessage}
-          image={popupImage}
-          closePopup={closePopup}
-        />
-      )}
+      <AnimatePresence>
+        {popupShow && (
+          <Popup
+            message={popupMessage}
+            image={popupImage}
+            closePopup={closePopup}
+          />
+        )}
+      </AnimatePresence>
 
       <Layout title={pageIntl.title}>
         <MainSection title={pageIntl.title} sectionClass="contact">

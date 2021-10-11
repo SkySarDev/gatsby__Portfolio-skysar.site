@@ -1,5 +1,8 @@
 import React from "react";
 import { useIntl } from "gatsby-plugin-intl";
+import { motion } from "framer-motion";
+
+import { animations } from "utils/animations";
 
 import IconCloseBtn from "components/assets/close-btn.svg";
 
@@ -9,17 +12,19 @@ const Popup = ({ closePopup, message, image }) => {
   const { messages } = useIntl();
 
   return (
-    <div
+    <motion.div
       className="popup popup-notification"
       aria-hidden={true}
       onClick={closePopup}
+      {...animations.opacity}
     >
       <div className="popup__content popup-notification__content">
         <div className="popup__container container">
-          <div
+          <motion.div
             className="popup__wrapper popup-notification__wrapper"
             aria-hidden={true}
             onClick={e => e.stopPropagation()}
+            {...animations.scaling}
           >
             <div className="popup__inner">
               <IconCloseBtn
@@ -38,10 +43,10 @@ const Popup = ({ closePopup, message, image }) => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

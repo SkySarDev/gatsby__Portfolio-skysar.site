@@ -57,4 +57,27 @@ export const animations = {
       },
     },
   },
+
+  // Scaling
+  scaling: {
+    initial: {
+      scale: 0,
+    },
+    animate: {
+      scale: 1,
+      transition: {
+        duration: 0.35,
+      },
+    },
+    exit: {
+      scale: 0,
+    },
+  },
+
+  // Opacity
+  opacity: {
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+    exit: { opacity: 0 },
+  },
 };
