@@ -2,6 +2,9 @@ import React from "react";
 import { graphql } from "gatsby";
 import { useIntl, Link } from "gatsby-plugin-intl";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { motion } from "framer-motion";
+
+import { animations } from "utils/animations";
 
 import Layout from "components/Layout";
 import MainSection from "components/MainContent/MainSection";
@@ -16,11 +19,21 @@ const Projects = ({ data }) => {
   );
   const projectsList = nodes.filter(item => item.locale === locale);
 
-  const ProjectCardRender = ({ title, description, preview_img, slug }) => {
+  const ProjectCardRender = ({
+    title,
+    description,
+    preview_img,
+    slug,
+    index,
+  }) => {
     const imageData = getImage(preview_img.localFile);
 
     return (
-      <div className="projects__item project-card">
+      <motion.div
+        className="projects__item project-card"
+        {...animations.appearance}
+        custom={index * 0.1}
+      >
         <div className="project-card__inner">
           <Link to={`/project/${slug}`}>
             <div className="project-card__content">
@@ -38,7 +51,7 @@ const Projects = ({ data }) => {
             </div>
           </Link>
         </div>
-      </div>
+      </motion.div>
     );
   };
 
@@ -48,8 +61,12 @@ const Projects = ({ data }) => {
         <div className="main__content row">
           <div className="projects__wrapper">
             <div className="projects__list">
-              {projectsList.map(projectItem => (
-                <ProjectCardRender key={projectItem.id} {...projectItem} />
+              {projectsList.map((projectItem, i) => (
+                <ProjectCardRender
+                  key={projectItem.id}
+                  {...projectItem}
+                  index={i}
+                />
               ))}
             </div>
           </div>

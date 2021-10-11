@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { graphql } from "gatsby";
 import { useIntl } from "gatsby-plugin-intl";
+import { motion } from "framer-motion";
 
 import useSendMessage from "utils/useSendMessage";
+import { animations } from "utils/animations";
 
 import Layout from "components/Layout";
 import MainSection from "components/MainContent/MainSection";
@@ -50,8 +52,8 @@ const Contact = ({ data }) => {
       <Layout title={title}>
         <MainSection title={title} sectionClass="contact">
           <div className="main__content row">
-            <div className="contact__form">
-              <form id="contact-form" onSubmit={onSubmitHandler}>
+            <motion.div className="contact__form" {...animations.rightToLeft}>
+              <form onSubmit={onSubmitHandler}>
                 <div className="row">
                   <div className="contact__form-name col-sm">
                     <input
@@ -91,12 +93,14 @@ const Contact = ({ data }) => {
                   {button_name}
                 </button>
               </form>
-            </div>
-            <SocialsIcons
-              listClass="contact__socials-list"
-              itemsClass="contact__socials-item"
-              iconsClass="contact__socials-icon"
-            />
+            </motion.div>
+            <motion.div {...animations.leftToRight}>
+              <SocialsIcons
+                listClass="contact__socials-list"
+                itemsClass="contact__socials-item"
+                iconsClass="contact__socials-icon"
+              />
+            </motion.div>
           </div>
         </MainSection>
       </Layout>

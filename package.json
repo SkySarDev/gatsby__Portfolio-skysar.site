@@ -5,6 +5,8 @@
   "version": "0.1.0",
   "author": "Maxim Biryukov <skysar.dev@gmail.com>",
   "dependencies": {
+    "bootstrap": "^5.0.2",
+    "framer-motion": "^4.1.17",
     "gatsby": "^3.14.0",
     "gatsby-plugin-asset-path": "^3.0.4",
     "gatsby-plugin-image": "^1.13.0",
@@ -23,8 +25,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
-    "sass": "^1.42.1",
-    "bootstrap": "^5.0.2"
+    "sass": "^1.42.1"
   },
   "devDependencies": {
     "prettier": "2.4.1"

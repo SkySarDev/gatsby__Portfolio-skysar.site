@@ -2,6 +2,9 @@ import React from "react";
 import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { useIntl } from "gatsby-plugin-intl";
+import { motion } from "framer-motion";
+
+import { animations } from "utils/animations";
 
 import Layout from "components/Layout";
 import MainSection from "components/MainContent/MainSection";
@@ -25,15 +28,21 @@ const IndexPage = ({ data }) => {
     <Layout title={title}>
       <MainSection title={title} sectionClass={"about"}>
         <div className="main__content about__content row">
-          <div className="about__img-wrapper col-md-7 col-xl-6">
+          <motion.div
+            className="about__img-wrapper col-md-7 col-xl-6"
+            {...animations.rightToLeft}
+          >
             <GatsbyImage
               className="about__img"
               alt={title}
               image={imageData}
               objectFit={"contain"}
             />
-          </div>
-          <div className="about__description-wrapper col-md-5 col-xl-4">
+          </motion.div>
+          <motion.div
+            className="about__description-wrapper col-md-5 col-xl-4"
+            {...animations.leftToRight}
+          >
             <div className="about__description-content">
               <h1 className="about__description-title">{description_title}</h1>
               <p className="about__description-subtitle">
@@ -42,7 +51,7 @@ const IndexPage = ({ data }) => {
               <p className="about__description-text">{description1}</p>
               <p className="about__description-text">{description2}</p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </MainSection>
     </Layout>

@@ -2,6 +2,9 @@ import React from "react";
 import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { useIntl, Link } from "gatsby-plugin-intl";
+import { motion } from "framer-motion";
+
+import { animations } from "utils/animations";
 
 import Layout from "components/Layout";
 import MainSection from "components/MainContent/MainSection";
@@ -31,8 +34,18 @@ const ProjectPage = ({ data }) => {
     <Layout title={title}>
       <MainSection title={title} sectionClass={"project"}>
         <div className="main__content row">
-          <p className="project__description">{full_description}</p>
-          <div className="project__nav row">
+          <motion.p
+            className="project__description"
+            {...animations.appearance}
+            custom={0}
+          >
+            {full_description}
+          </motion.p>
+          <motion.div
+            className="project__nav row"
+            {...animations.appearance}
+            custom={0.2}
+          >
             {link && (
               <LinkButton link={link}>
                 <IconLink /> {messages["projectPage.demo"]}
@@ -43,17 +56,25 @@ const ProjectPage = ({ data }) => {
                 <IconGitHub /> GitHub
               </LinkButton>
             )}
-          </div>
-          <div className="project__img">
+          </motion.div>
+          <motion.div
+            className="project__img"
+            {...animations.appearance}
+            custom={0.4}
+          >
             <GatsbyImage alt={title} image={image} />
-          </div>
-          <div className="back-block">
+          </motion.div>
+          <motion.div
+            className="back-block"
+            {...animations.appearance}
+            custom={0.6}
+          >
             <Link to={"/projects"}>
               <div className="back-block__button button">
                 {messages["projectPage.backButton"]}
               </div>
             </Link>
-          </div>
+          </motion.div>
         </div>
       </MainSection>
     </Layout>
