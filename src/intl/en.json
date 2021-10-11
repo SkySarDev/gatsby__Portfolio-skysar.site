@@ -8,5 +8,6 @@
   "sendMessage.sending": "Message sending...",
   "sendMessage.success": "Message has been sent!",
   "sendMessage.error": "Error! Message was not sent!",
-  "popup.title": "Notification"
+  "popup.title": "Notification",
+  "404.notFound": "Page not found"
 }

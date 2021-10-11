@@ -8,5 +8,6 @@
   "sendMessage.sending": "Отправка сообщения...",
   "sendMessage.success": "Сообщение отправлено!",
   "sendMessage.error": "Ошибка! Сообщение не отправлено!",
-  "popup.title": "Уведомление"
+  "popup.title": "Уведомление",
+  "404.notFound": "Страница не найдена"
 }
